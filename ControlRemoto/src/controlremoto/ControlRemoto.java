@@ -14,7 +14,7 @@ public class ControlRemoto {
     
     //Movimientos mov = new Movimientos();
 
-    public  void Inicializar(Movimientos mov) {
+    public  void inicializar(Movimientos mov) {
         Scanner teclado;
         teclado = new Scanner(System.in);
         System.out.print("Cuantas fila tiene la matriz:");
@@ -38,7 +38,7 @@ public class ControlRemoto {
         String[] comando;
         ControlRemoto con = new ControlRemoto();
         Movimientos mov = new Movimientos();
-        con.Inicializar(mov);
+        con.inicializar(mov);
         do {
             System.out.print("dijite los comandos de movimiento o digite 'salir' para terminar ");
             entrada = teclado.next();
