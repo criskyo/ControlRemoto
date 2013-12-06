@@ -18,17 +18,17 @@ public class Movimientos {
         if(direccion.equalsIgnoreCase("S"))
         {
            
-           resultado= this.moverFila(cantidad);
+           resultado= this.moverColumna(cantidad);
         }else if(direccion.equalsIgnoreCase("N"))
         {cantidad = cantidad * (-1);
-           resultado= this.moverFila(cantidad);
+           resultado= this.moverColumna(cantidad);
         }else if(direccion.equalsIgnoreCase("E"))
         {
-           resultado= this.moverColumna(cantidad);
+           resultado= this.moverFila(cantidad);
         }else if(direccion.equalsIgnoreCase("O"))
         {
            cantidad = cantidad * (-1);
-          resultado= this.moverColumna(cantidad);
+          resultado= this.moverFila(cantidad);
         }
         
         return resultado;
