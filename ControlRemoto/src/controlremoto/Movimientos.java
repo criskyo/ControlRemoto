@@ -18,17 +18,17 @@ public class Movimientos {
         if(direccion.equalsIgnoreCase("S"))
         {
            
-           resultado= this.moverColumna(cantidad);
+           resultado= this.moverFila(cantidad);
         }else if(direccion.equalsIgnoreCase("N"))
         {cantidad = cantidad * (-1);
-           resultado= this.moverColumna(cantidad);
+           resultado= this.moverFila(cantidad);
         }else if(direccion.equalsIgnoreCase("E"))
         {
-           resultado= this.moverFila(cantidad);
+           resultado= this.moverColumna(cantidad);
         }else if(direccion.equalsIgnoreCase("O"))
         {
            cantidad = cantidad * (-1);
-          resultado= this.moverFila(cantidad);
+          resultado= this.moverColumna(cantidad);
         }
         
         return resultado;
@@ -50,8 +50,8 @@ public class Movimientos {
     public void InicializaTablero(int filas, int columnas)
     {
         this.tab = new Tablero(filas, columnas);
-        this.tab.setPosisionColumna(columnas - 1);
-        System.out.println("La posicion es " + tab.getPosisionFila() +","+( (tab.getPosisionColumna()-columnas)+1));
+        this.tab.setPosisionFila(filas - 1);
+        System.out.println("La posicion es " + ((tab.getPosisionFila()-filas)+1) +","+ tab.getPosisionColumna());
     }
     
 }

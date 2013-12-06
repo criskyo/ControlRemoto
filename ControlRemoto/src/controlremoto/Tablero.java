@@ -43,10 +43,10 @@ public class Tablero {
   
   public String mueveColumna(int movimiento)
   {
-      if(((getPosisionColumna()+movimiento)>=0) && (getPosisionColumna()+movimiento)<tablero.length )
+      if(((getPosisionColumna()+movimiento)>=0) && (getPosisionColumna()+movimiento)<tablero[0].length )
       {
           setPosisionColumna(getPosisionColumna()+movimiento);
-        return "ahora se encuentra en la Posición (" + getPosisionFila()+","+(((getPosisionColumna()-(tablero[0].length-1))*-1))+") ";  
+        return "ahora se encuentra en la Posición (" + (((getPosisionFila()-(tablero.length-1))*-1))+","+getPosisionColumna()+") ";  
       }else
   {
       return "Se ha detenido el avance por salir de los límites";
@@ -56,10 +56,10 @@ public class Tablero {
   
   public String mueveFila(int movimiento)
   {
-     if(((getPosisionFila()+movimiento)>=0) && (getPosisionFila()+movimiento)<tablero[0].length )
+     if(((getPosisionFila()+movimiento)>=0) && (getPosisionFila()+movimiento)<tablero.length )
       {
           setPosisionFila(getPosisionFila()+movimiento);
-        return "ahora se encuentra en la Posición (" + getPosisionFila()+","+(((getPosisionColumna()-(tablero[0].length-1))*-1))+") ";  
+        return "ahora se encuentra en la Posición (" + (((getPosisionFila()-(tablero.length-1))*-1))+","+getPosisionColumna()+") ";  
       }else
   {
       return "Se ha detenido el avance por salir de los límites";
