@@ -12,7 +12,7 @@ public class Movimientos {
     
  Tablero tab;   
     
-    public String Mover(String direccion, int cantidad)
+    public String mover(String direccion, int cantidad)
     {
         String resultado="";
         if(direccion.equalsIgnoreCase("S"))
@@ -47,7 +47,7 @@ public class Movimientos {
          
     }
     
-    public void InicializaTablero(int filas, int columnas)
+    public void inicializaTablero(int filas, int columnas)
     {
         this.tab = new Tablero(filas, columnas);
         this.tab.setPosisionFila(filas - 1);
