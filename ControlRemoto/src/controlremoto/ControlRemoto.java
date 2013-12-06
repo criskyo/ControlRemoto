@@ -49,7 +49,8 @@ public class ControlRemoto {
                     if (comando.length == 2) {
                         if (comando[0].matches("[0-9]*")) {
                             if (comando[1].equalsIgnoreCase("N") || comando[1].equalsIgnoreCase("S") || comando[1].equalsIgnoreCase("E") || comando[1].equalsIgnoreCase("O")) {
-                            System.out.println(mov.Mover(comando[1], Integer.parseInt(comando[0])));
+                            System.out.println("Comando a aplicar: direccion "+comando[1].toString() + " cantidad "+comando[0].toString());
+                                System.out.println(mov.Mover(comando[1], Integer.parseInt(comando[0])));
                             } else {
                                 System.out.println("Error en formato de comando");
                             }
