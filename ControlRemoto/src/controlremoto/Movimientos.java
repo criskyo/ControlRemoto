@@ -12,43 +12,46 @@ public class Movimientos {
     
  Tablero tab;   
     
-    public void Mover(String direccion, int cantidad)
+    public String Mover(String direccion, int cantidad)
     {
+        String resultado="";
         if(direccion.equalsIgnoreCase("S"))
         {
-           cantidad = cantidad * (-1);
-            this.moverColumna(cantidad);
+           
+           resultado= this.moverColumna(cantidad);
         }else if(direccion.equalsIgnoreCase("N"))
-        {
-            this.moverColumna(cantidad);
+        {cantidad = cantidad * (-1);
+           resultado= this.moverColumna(cantidad);
         }else if(direccion.equalsIgnoreCase("E"))
         {
-            this.moverFila(cantidad);
+           resultado= this.moverFila(cantidad);
         }else if(direccion.equalsIgnoreCase("O"))
         {
            cantidad = cantidad * (-1);
-           this.moverFila(cantidad);
+          resultado= this.moverFila(cantidad);
         }
+        
+        return resultado;
     }  
     
     
     public String moverColumna(int cantidad)
     {
-        tab.mueveColumna(cantidad);
-        return "false";
+       return this.tab.mueveColumna(cantidad);
+         
     }
     
     public String moverFila(int cantidad)
     {
-        tab.mueveFila(cantidad);
-        return "false";
+       return this.tab.mueveFila(cantidad);
+         
     }
     
     public void InicializaTablero(int filas, int columnas)
     {
-        tab = new Tablero(filas, columnas);
-        tab.setPosisionColumna(columnas - 1);
-        System.out.println("La posicion es " + tab.getPosisionFila() + tab.getPosisionColumna());
+        this.tab = new Tablero(filas, columnas);
+        this.tab.setPosisionColumna(columnas - 1);
+        System.out.println("La posicion es " + tab.getPosisionFila() +","+( (tab.getPosisionColumna()-columnas)+1));
     }
     
 }

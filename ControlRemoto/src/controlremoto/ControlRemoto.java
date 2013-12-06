@@ -12,9 +12,9 @@ import java.util.Scanner;
  */
 public class ControlRemoto {
     
-    Movimientos mov = new Movimientos();
+    //Movimientos mov = new Movimientos();
 
-    public  void Inicializar() {
+    public  void Inicializar(Movimientos mov) {
         Scanner teclado;
         teclado = new Scanner(System.in);
         System.out.print("Cuantas fila tiene la matriz:");
@@ -38,18 +38,18 @@ public class ControlRemoto {
         String[] comando;
         ControlRemoto con = new ControlRemoto();
         Movimientos mov = new Movimientos();
-        con.Inicializar();
+        con.Inicializar(mov);
         do {
-            System.out.print("dijite los comandos de movimiento deje en blanco para salir");
+            System.out.print("dijite los comandos de movimiento o digite 'salir' para terminar ");
             entrada = teclado.next();
-            if (!entrada.equals("")) {
+            if (!entrada.equalsIgnoreCase("salir")) {
                  serie = entrada.split(";");
                 for (int i = 0; i < serie.length; i++) {
                      comando = serie[i].split(",");
                     if (comando.length == 2) {
                         if (comando[0].matches("[0-9]*")) {
                             if (comando[1].equalsIgnoreCase("N") || comando[1].equalsIgnoreCase("S") || comando[1].equalsIgnoreCase("E") || comando[1].equalsIgnoreCase("O")) {
-                            mov.Mover(comando[1], Integer.parseInt(comando[0]));
+                            System.out.println(mov.Mover(comando[1], Integer.parseInt(comando[0])));
                             } else {
                                 System.out.println("Error en formato de comando");
                             }
@@ -62,6 +62,6 @@ public class ControlRemoto {
                     }
                 }
             }
-        } while (!entrada.equals(""));
+        } while (!entrada.equals("salir"));
     }
 }
